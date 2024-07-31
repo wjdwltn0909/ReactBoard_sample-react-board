@@ -3,6 +3,7 @@ package com.nc13.react_board.controller;
 import com.nc13.react_board.model.BoardDTO;
 import com.nc13.react_board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -79,6 +80,14 @@ public class BoardController {
         resultMap.put("destId", boardDTO.getId());
 
         return resultMap;
+    }
+
+    @GetMapping("delete/{id}")
+    public ResponseEntity<Void> delete(@PathVariable int id) {
+
+        BOARD_SERVICE.delete(id);
+
+        return ResponseEntity.ok().build();
     }
 }
 

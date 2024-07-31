@@ -48,4 +48,8 @@ public class BoardService {
         SESSION.update(NAMESPACE + ".update", boardDTO);
     }
 
+    public void delete(int id) {
+        SESSION.delete(NAMESPACE+".delete", id);
+    }
+
 }

@@ -30,4 +30,8 @@
         modify_date = NOW()
         WHERE id = #{id}
     </update>
+    <delete id="delete" parameterType="int">
+        DELETE FROM board
+        WHERE id = #{id}
+    </delete>
 </mapper>
